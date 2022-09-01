@@ -1,4 +1,6 @@
+
 from flask.cli import AppGroup
+from .model_generate import seed_companies, seed_records, undo_records, undo_companies
 from .users import seed_users, undo_users
 
 # Creates a seed group to hold our commands
@@ -10,6 +12,8 @@ seed_commands = AppGroup('seed')
 @seed_commands.command('all')
 def seed():
     seed_users()
+    seed_records()
+    seed_companies()
     # Add other seed functions here
 
 
@@ -17,4 +21,6 @@ def seed():
 @seed_commands.command('undo')
 def undo():
     undo_users()
+    undo_records()
+    undo_companies()
     # Add other undo functions here
