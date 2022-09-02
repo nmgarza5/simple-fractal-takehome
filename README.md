@@ -35,20 +35,16 @@ Nikolas Garza's Simple Fractal coding assessment. The tech stack employed is a b
 
 5. Get into your pipenv, seed your database, and run your flask app
 
-   ```bash
-   pipenv shell
-   ```
+   - ```pipenv shell```
 
-   ```bash
-   psql -d 'database name' -a -f app/sample_data/seeders.sql
-   ```
-   - in order to seed the database, the path to the seeder file will need to be changed on your machine. In app/seeders.sql change the following:
+   - ```psql -d 'database name' -a -f app/sample_data/seeders.sql```
+   
+   - ```flask run```
+   
+   - NOTE: in order to seed the database, the path to the seeder file will need to be changed on your machine. In app/sample_data/seeders.sql change the following:
 
    ![image](https://user-images.githubusercontent.com/90273783/188048709-58caeb9f-4cde-4bb3-9df2-367630058f22.png)
 
-   ```bash
-   flask run
-   ```
 
 6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
    - in summary: cd into react-app, add the .env file to route to localhost:5000, and run the following commands:
