@@ -1,3 +1,6 @@
+## Simple Fractal Coding Assessment
+Nikolas Garza's Simple Fractal coding assessment. The tech stack employed is a backend built with Python/Flask and a PostgreSQL database. The frontend is built with React/Redux. A project starter was used as a base for this application. The starter is built to be deployed to heroku however this functionality was not used. Simply create the postgres database, install the requirements as indicated below, and run on localhost. 
+
 ## Getting starterd
 ### Dev Containers (M1 Users, follow this guide)
 1. Make sure you have the [Microsoft Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed.
