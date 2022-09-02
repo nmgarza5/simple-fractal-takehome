@@ -38,14 +38,12 @@ def calculate__candidate_percentile(id):
     similar_company_communication = []
     for ele in all_companies:
       company = ele.to_dict()
-      # print('\n\n', company)
       if are_similar(company, candidate_company):
           similar_companies.append(company)
           records = company['score_records']
           for record in records.values():
               similar_companies_coding.append(record['coding_score'])
               similar_company_communication.append(record['communication_score'])
-      # print('\n\n', similar_companies_coding)
 
     # get similar candidates
     all_records = Record.query.all()
