@@ -7,7 +7,7 @@ from flask_wtf.csrf import CSRFProtect, generate_csrf
 
 from .models import db, Record, Company
 
-# from .seeds import seed_commands
+from .seeds import seed_commands
 from .api.percentile_routes import percentile_routes
 
 from .config import Config
@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 
 # Tell flask about our seed commands
-# app.cli.add_command(seed_commands)
+app.cli.add_command(seed_commands)
 
 app.config.from_object(Config)
 
