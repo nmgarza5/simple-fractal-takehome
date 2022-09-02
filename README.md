@@ -16,6 +16,7 @@ Nikolas Garza's Simple Fractal coding assessment. The tech stack employed is a b
       - within ```/react-app/src/store``` I build a redux store to maintain a state object with the current record displayed
       - within ```/react-app/src/App.js``` I built the simple UI to display the current candidate's records
 
+
 ## Getting started
 
 1. Clone this repository.
@@ -27,7 +28,7 @@ Nikolas Garza's Simple Fractal coding assessment. The tech stack employed is a b
       ```
 3. Create a **.env** file based on the example with proper settings for your
    development environment
-
+   
 4 Setup your PostgreSQL user, password and database and make sure it matches your **.env** file. An example .env file is provided with the settings I used (in a real     world scenario this information will be private).
    - IMPORTANT: The postgres user must be a SUPERUSER. The next step is dependent on it.
 
