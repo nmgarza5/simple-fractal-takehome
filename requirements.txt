@@ -6,6 +6,7 @@
 #
 
 -i https://pypi.org/simple
+scipy==1.9.1
 alembic==1.6.5
 click==7.1.2
 flask-cors==3.0.8

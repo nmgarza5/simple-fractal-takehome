@@ -6,6 +6,7 @@ class Record(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     company_id = db.Column(db.Integer, db.ForeignKey('companies.id'), nullable=False)
     candidate_id = db.Column(db.Integer, nullable=False)
+    communication_score = db.Column(db.Integer, nullable=False)
     coding_score = db.Column(db.Integer, nullable=False)
     title = db.Column(db.String(255), nullable=False)
 
@@ -17,6 +18,7 @@ class Record(db.Model):
             'company_id': self.company_id,
             'candidate_id': self.candidate_id,
             'coding_score': self.coding_score,
+            'communication_score': self.communication_score,
             'title': self.title,
             'company': self.company.to_simple_dict()
         }

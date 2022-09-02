@@ -5,12 +5,9 @@ from flask_migrate import Migrate
 from flask_wtf.csrf import CSRFProtect, generate_csrf
 
 
-from .models import db, User, Record, Company
-from .api.user_routes import user_routes
-from .api.auth_routes import auth_routes
-from .api.percentile_routes import percentile_routes
+from .models import db, Record, Company
 
-from .seeds import seed_commands
+from .api.percentile_routes import percentile_routes
 
 from .config import Config
 
@@ -21,7 +18,7 @@ app = Flask(__name__)
 app.cli.add_command(seed_commands)
 
 app.config.from_object(Config)
-app.register_blueprint(auth_routes, url_prefix='/api/auth')
+
 app.register_blueprint(percentile_routes, url_prefix='/api/percentile')
 db.init_app(app)
 Migrate(app, db)
