@@ -24,7 +24,6 @@ function App() {
 
     const candidateRecord = await dispatch(receivePercentiles(id));
     if (candidateRecord.errors) {
-      console.log(candidateRecord.errors)
       setErrors(candidateRecord.errors);
     }
 }
