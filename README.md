@@ -4,17 +4,18 @@ Nikolas Garza's Simple Fractal coding assessment. The tech stack employed is a b
 
 
 ## File Structure - where I wrote majority of my code
-   Backend:
-      - backend code is housed in ```/app```
-      - models for companies and score records are within ```/app/models```
-      - sample data and one file that will need to be changed by you in located in ```/app/sample_data```
-         - the file is ```/app/sample_data/seeders.sql```
-      - the route and most of the code I wrote on the backend in in ```/app/api/percentile_routes```
 
-   FrontEnd:
-      - frontend code is housed in ```/react-app/src```
-      - within ```/react-app/src/store``` I build a redux store to maintain a state object with the current record displayed
-      - within ```/react-app/src/App.js``` I built the simple UI to display the current candidate's records
+- Backend:
+   - backend code is housed in ```/app```
+   - models for companies and score records are within ```/app/models```
+   - sample data and one file that will need to be changed by you in located in ```/app/sample_data```
+      - the file is ```/app/sample_data/seeders.sql```
+   - the route and most of the code I wrote on the backend is in ```/app/api/percentile_routes```
+   
+- FrontEnd:
+   - frontend code is housed in ```/react-app/src```
+   - within ```/react-app/src/store``` I build a redux store to maintain a state object with the current record displayed
+   - within ```/react-app/src/App.js``` I built the simple UI to display the current candidate's records
 
 
 ## Getting started
