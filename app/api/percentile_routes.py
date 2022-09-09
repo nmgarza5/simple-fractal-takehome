@@ -1,7 +1,5 @@
-from flask import Blueprint, jsonify, session, request
-from app.models import Company, Record, db
-import math
-from scipy import stats
+from flask import Blueprint
+from app.models import Record
 from .helpers import calculate_percentiles, find_similar_candidates
 
 percentile_routes = Blueprint('percentile', __name__)
@@ -10,10 +8,7 @@ percentile_routes = Blueprint('percentile', __name__)
 def calculate__candidate_percentile(id):
   try:
   #   get candidate record
-    candidate_records = Record.query.filter(Record.candidate_id == (id))
-    candidate_record = None
-    for record in candidate_records:
-      candidate_record = record.to_dict()
+    candidate_record = Record.query.filter(Record.candidate_id == (id)).first().to_dict()
 
   # obtain records of all candidates who are similar (simialr company and same position)
     similar_candidates = find_similar_candidates(candidate_record)
