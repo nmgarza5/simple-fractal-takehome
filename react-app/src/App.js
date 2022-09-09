@@ -34,7 +34,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path='/' >
-          <h1>Candidate Engineering Skills Rankings</h1>
+          <h1>Engineer Percentile Lookup</h1>
           <div>
             <div className='input_container'>
               <label htmlFor="candidate ID">Candidate ID:</label>
