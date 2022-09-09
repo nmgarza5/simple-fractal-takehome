@@ -24,7 +24,7 @@ def find_similar_candidates(candidate_record):
 
 
 # return the a dictionary containing the specified candidate's coding and communication percentiles
-def calculatePercentiles(similar_candidates, candidate_record):
+def calculate_percentiles(similar_candidates, candidate_record):
   candidate_coding_score = candidate_record['coding_score']
   candidate_communication_score = candidate_record['communication_score']
   all_records = Record.query.all()
@@ -47,7 +47,7 @@ def calculate__candidate_percentile(id):
   # obtain records of all candidates who are similar (simialr company and same position)
     similar_candidates = find_similar_candidates(candidate_record)
   # calculate coding and communication percentiles
-    percentiles = calculatePercentiles(similar_candidates, candidate_record)
+    percentiles = calculate_percentiles(similar_candidates, candidate_record)
     return {
       'candidate': candidate_record,
       'comms_percentile': percentiles['comms_percentile'],
