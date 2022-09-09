@@ -3,8 +3,7 @@ import math
 from scipy import stats
 
 def are_similar(company_1_FI, company_2_FI):
-    similar = math.fabs(company_1_FI['fractal_index'] - company_2_FI['fractal_index']) < 0.15
-    return similar
+    return math.fabs(company_1_FI['fractal_index'] - company_2_FI['fractal_index']) < 0.15
 
 # returns a set with the IDs of all canidates who are similar
 def find_similar_candidates(candidate_record):
@@ -34,4 +33,8 @@ def calculate_percentiles(similar_candidates, candidate_record):
   # use scipy function to calculate percentile, passing in the candidate's and similar candidates' scores
   comms_percentile = round(stats.percentileofscore(similar_candidates_comms, communication_score), 2)
   coding_percentile = round(stats.percentileofscore(similar_candidates_coding, coding_score), 2)
-  return {'comms_percentile': comms_percentile, 'coding_percentile': coding_percentile}
+
+  return {
+            'comms_percentile': comms_percentile,
+            'coding_percentile': coding_percentile
+        }
