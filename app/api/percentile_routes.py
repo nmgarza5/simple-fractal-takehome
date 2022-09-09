@@ -34,37 +34,32 @@ def calculate__candidate_percentile(id):
   # get similar companies
     all_companies = Company.query.all()
     # similar_companies = []
-    similar_candidates_coding = []
-    similar_candidates_comms = []
+
+    similar_candidates = set()
     for ele in all_companies:
       company = ele.to_dict()
       if are_similar(company, candidate_company):
           records = company['score_records']
           for record in records.values():
               if record['title'] == candidate_title:
-                similar_candidates_coding.append(record['coding_score'])
-                similar_candidates_comms.append(record['communication_score'])
+                similar_candidates.add(record['id'])
 
-    # get similar candidates
-    # all_records = Record.query.all()
-    # similar_candidates_coding = []
-    # similar_candidates_communication = []
-    # for ele in all_records:
-    #   candidate = ele.to_dict()
-    #   if candidate['title'] == candidate_title:
-    #       similar_candidates_coding.append(candidate['coding_score'])
-    #       similar_candidates_communication.append(candidate['communication_score'])
-
+    all_records = Record.query.all()
+    similar_candidates_coding = []
+    similar_candidates_comms = []
+    for record in all_records:
+      dict = record.to_dict()
+      if dict['id'] in similar_candidates:
+        similar_candidates_coding.append(dict['coding_score'])
+        similar_candidates_comms.append(dict['communication_score'])
 
   #   get percentiles
     comms_percentile = round(stats.percentileofscore(similar_candidates_comms, candidate_communication_score), 2)
-    # company_communication_percentile = round(stats.percentileofscore(similar_company_communication, candidate_communication_score), 2)
     coding_percentile = round(stats.percentileofscore(similar_candidates_coding, candidate_coding_score), 2)
-    # title_communication_percentile = round(stats.percentileofscore(similar_candidates_communication, candidate_communication_score), 2)
 
 
     return {
-      'candidate': candidate_record,
+      # 'candidate': candidate_record,
       'comms_percentile': comms_percentile,
       'coding_percentile': coding_percentile,
       }
