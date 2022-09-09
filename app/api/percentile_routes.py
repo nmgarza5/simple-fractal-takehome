@@ -59,7 +59,7 @@ def calculate__candidate_percentile(id):
 
 
     return {
-      # 'candidate': candidate_record,
+      'candidate': candidate_record,
       'comms_percentile': comms_percentile,
       'coding_percentile': coding_percentile,
       }

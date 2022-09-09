@@ -9,8 +9,10 @@ function App() {
 
   let candidateId = record?.candidate?.candidate_id
   let title = record?.candidate?.title
-  let codingScore = record?.candidate?.coding_score
-  let communicationScore = record?.candidate?.communication_score
+  let codingScore = record?.candidate?.coding_score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  let communicationScore = record?.candidate?.communication_score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  let codingPercentile = record.coding_percentile
+  let commsPercentile = record.comms_percentile
 
   const [id, setId] = useState('')
   const [errors, setErrors] = useState('');
@@ -74,34 +76,18 @@ function App() {
                 </div>
                 <div className='percentile'>
                   <h5>
-                      Coding Score Percentile (Similar Companies)
+                      Coding Score Percentile
                   </h5>
                   <p>
-                      {record.company_coding_percentile}
+                      {codingPercentile}
                   </p>
                 </div>
                 <div className='percentile'>
                   <h5>
-                  Coding Score Percentile (Similar Title)
+                      Communication Score Percentile
                   </h5>
                   <p>
-                      {record.title_coding_percentile}
-                  </p>
-                </div>
-                <div className='percentile'>
-                  <h5>
-                  Communication Score Percentile (Similar Companies)
-                  </h5>
-                  <p>
-                      {record.company_communication_percentile}
-                  </p>
-                </div>
-                <div className='percentile'>
-                  <h5>
-                  Communication Score Percentile (Similar Title)
-                  </h5>
-                  <p>
-                      {record.title_communication_percentile}
+                      {commsPercentile}
                   </p>
                 </div>
               </div>
